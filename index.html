@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I am sorry snehalll 💛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at top left, #ffe7f2 0, #fff7e5 40%, #fdfbff 100%);
+      --accent: #ff7aa2;
+      --accent-strong: #ff5286;
+      --accent-soft: rgba(255, 122, 162, 0.12);
+      --accent-soft-2: rgba(255, 255, 255, 0.75);
+      --text-main: #1f2024;
+      --text-soft: #6b6b80;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --border-subtle: rgba(255, 122, 162, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      animation: bodyFade 0.6s ease-out;
+    }
+
+    @keyframes bodyFade {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Cute floating hearts in the background */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .heart {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      transform: rotate(45deg);
+      animation: floatUp 14s linear infinite;
+      opacity: 0.35;
+      filter: blur(0.2px);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -9px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -9px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+      }
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 18px 60px;
+    }
+
+    header {
+      padding: 24px 0 10px;
+      text-align: center;
+    }
+
+    header small {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: inline-block;
+      opacity: 0.85;
+    }
+
+    header h1 {
+      margin-top: 10px;
+      font-family: "Pacifico", cursive;
+      font-size: clamp(2.5rem, 5vw, 3.7rem);
+      color: var(--accent-strong);
+      text-shadow: 0 10px 28px rgba(255, 82, 134, 0.45);
+      letter-spacing: 0.02em;
+    }
+
+    header p {
+      margin-top: 6px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      margin-top: 24px;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      padding: 26px 22px 26px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 22px;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      animation: floatInUp 0.55s ease-out;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 20px 18px 22px;
+      }
+    }
+
+    @keyframes floatInUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-main {
+      padding-right: 4px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, rgba(255, 122, 162, 0.12), rgba(255, 209, 153, 0.18));
+      font-size: 0.78rem;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      animation: softPulse 2.6s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% { transform: translateY(0); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+      50% { transform: translateY(-1px); box-shadow: 0 14px 26px rgba(0,0,0,0.07); }
+    }
+
+    .hero-tag span:first-child {
+      font-size: 1.05rem;
+    }
+
+    .hero-title {
+      margin-top: 14px;
+      font-size: clamp(2.1rem, 4.4vw, 2.7rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-title span {
+      color: var(--accent-strong);
+    }
+
+    .hero-buttons {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 0.94rem;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, color 0.16s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.01em;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-strong), #ff9ac0);
+      color: #ffffff;
+      box-shadow: 0 12px 26px rgba(255, 122, 162, 0.55);
+    }
+
+    .btn-primary::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.25), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+
+    .btn-primary:hover::after {
+      opacity: 1;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(255, 122, 162, 0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+    }
+
+    .btn-ghost:hover {
+      background: #ffffff;
+      border-style: solid;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.35);
+      color: var(--text-main);
+    }
+
+    .hero-note {
+      margin-top: 10px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      opacity: 0.9;
+    }
+
+    .hero-quote {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      background: radial-gradient(circle at top left, #ffe6ef, #ffffff 55%);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-quote::before {
+      content: "“";
+      position: absolute;
+      font-size: 4.4rem;
+      opacity: 0.12;
+      top: -16px;
+      left: 6px;
+      pointer-events: none;
+      color: var(--accent-strong);
+    }
+
+    .hero-quote p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .hero-quote footer {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      text-align: right;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      font-size: 1.16rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.01em;
+    }
+
+    .section-title span {
+      font-size: 1.1rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 18px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transform: translateY(0);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(255, 122, 162, 0.16), transparent 70%);
+      right: -50px;
+      top: -60px;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+      border-color: rgba(255, 122, 162, 0.45);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #fff7fb;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+      border: 1px solid rgba(255, 186, 216, 0.7);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* Invite section */
+    .invite-actions {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .invite-response {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border-radius: 18px;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, 0.02);
+      display: none;
+    }
+
+    .invite-response.show {
+      display: block;
+    }
+
+    .invite-response.happy {
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      background: #ecfdf3;
+      color: #166534;
+    }
+
+    .invite-response.sad {
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      background: #fef2f2;
+      color: #b91c1c;
+    }
+
+    /* Footer + Forgive button */
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .forgive-box {
+      margin-top: 14px;
+      background: var(--card-bg);
+      padding: 14px 18px 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    #forgiveMessage {
+      margin-top: 12px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--accent-strong);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.25s ease;
+    }
+
+    #forgiveMessage.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 6px;
+      height: 16px;
+      background: #ff7aa2;
+      animation: confettiFall 2.4s ease-out forwards;
+      border-radius: 2px;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-40px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(380deg);
+        opacity: 0;
+      }
+    }
+
+    /* Page views */
+    .page {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .page-active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-bar {
+      margin-top: 16px;
+      margin-bottom: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .back-text {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating hearts background -->
+  <div class="hearts" aria-hidden="true">
+    <div class="heart" style="left: 5%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 20%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 1.2s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 4.5s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 2.4s;"></div>
+    <div class="heart" style="left: 90%; animation-delay: 5.4s;"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <small>For my best friend</small>
+      <h1>I am sorry snehalll 💛</h1>
+      <p>From your stupid-but-soft best friend who never wants to lose you.</p>
+    </header>
+
+    <!-- HOME PAGE -->
+    <main id="page-home" class="page page-active">
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-tag">
+            <span>💌</span>
+            <span>A small apology, from me to you</span>
+          </div>
+          <h2 class="hero-title">
+            I messed up, <span>Snehal</span>. <br />
+            But I’m ready to listen, learn & fix it.
+          </h2>
+
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="openPage('apology')">
+              Read my apology 💛
+            </button>
+            <button class="btn btn-ghost" onclick="openPage('reasons')">
+              See why you’re special ✨
+            </button>
+            <button class="btn btn-ghost" onclick="openPage('invite')">
+              Plan tomorrow? 🌤️
+            </button>
+          </div>
+          <p class="hero-note">
+            P.S. This whole page is just for you. No AI, no copy-paste, only feelings. (Okay maybe tiny AI, but feelings are real 😌)
+          </p>
+        </div>
+        <aside class="hero-quote">
+          <p>
+            “Best friends sometimes fight. But the real ones say sorry, stay, and try harder.
+            I want to be that real one for you, always.”
+          </p>
+          <footer>— Me, trying to be less annoying and more honest</footer>
+        </aside>
+      </section>
+
+      <footer>
+        <div class="forgive-box">
+          <span>So…</span>
+          <button class="btn btn-primary" onclick="triggerForgive()">
+            Tap if you forgive me (a little) 🥺
+          </button>
+        </div>
+        <div id="forgiveMessage">
+          Yaaay! Even if it’s only 1% forgiveness, I’ll work for the remaining 99% 💛
+        </div>
+        <p style="margin-top: 14px;">
+          If you ever want this page deleted or changed, just say it.
+          Your wish &gt; my web dev skills. 😌
+        </p>
+      </footer>
+    </main>
+
+    <!-- APOLOGY PAGE -->
+    <main id="page-apology" class="page">
+      <div class="back-bar">
+        <button class="btn btn-ghost" onclick="openPage('home')">⬅ Back to main page</button>
+        <p class="back-text">First things first… I owe you a real apology.</p>
+      </div>
+
+      <section>
+        <h2 class="section-title">
+          <span>🤍</span> A real apology
+        </h2>
+        <p class="section-subtitle">
+          No excuses. Just what I actually feel but don’t always say properly.
+        </p>
+
+        <div class="card">
+          <div class="chip">
+            <span>🌧️</span> When I hurt you
+          </div>
+          <h3>I am really, truly sorry.</h3>
+        </div>
+
+        <!-- ABOUT US CARD -->
+        <div class="card" style="margin-top: 18px;">
+          <div class="chip">
+            <span>🫂</span> About us… honestly
+          </div>
+          <h3>I don’t want to lose what we have.</h3>
+          <p>
+            I just want to talk about <b>us</b> for a minute. You know me, I know you.
+            And you also know sometimes I do <i>too much</i>. Even now, I know I acted extra and crossed a line.
+            That’s how I am sometimes, but I never want to lose this friendship because of my nature
+            or because of some situation between us.
+          </p>
+          <br />
+          <p>
+            I can also feel that things between us aren’t like before… Our masti, our talks, our random calls –
+            it’s not the same right now. And I miss that version of us a lot.
+            But I just want you to know: <b>I’m still here</b>. As your best friend. I haven’t gone anywhere.
+          </p>
+          <br />
+          <p>
+            These past days, a lot has been happening with me too. There are things I wanted to share with you,
+            things I wanted your opinion on, things I just wanted to say to <b>you</b>.
+            I also want to sit and properly talk about our fight, about us, and honestly, about you too –
+            because so much time has passed and we didn’t really talk properly.
+          </p>
+          <br />
+          <p>
+            And one last thing… maybe this sounds stupid or like overthinking, but I’ll still say it:
+            <b>can we restart?</b> Like before? Fresh, no ego, no distance.
+            Can I be your best friend again – properly, fully, officially? 🥺💛
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- REASONS PAGE -->
+    <main id="page-reasons" class="page">
+      <div class="back-bar">
+        <button class="btn btn-ghost" onclick="openPage('home')">⬅ Back to main page</button>
+        <p class="back-text">Now let me remind you why you’re actually so special to me.</p>
+      </div>
+
+      <section>
+        <h2 class="section-title">
+          <span>✨</span> Little reasons you’re special to me
+        </h2>
+        <p class="section-subtitle">
+          Just four things I love about you (there are many more, but let’s start with these 😌).
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="chip">
+              <span>😆</span> Your vibe
+            </div>
+            <h3>Your vibe</h3>
+          </article>
+
+          <article class="card">
+            <div class="chip">
+              <span>🫶</span> Your heart
+            </div>
+            <h3>Your heart</h3>
+          </article>
+
+          <article class="card">
+            <div class="chip">
+              <span>🧠</span> Your brain
+            </div>
+            <h3>Your brain</h3>
+          </article>
+
+          <article class="card">
+            <div class="chip">
+              <span>🌈</span> Your chaos
+            </div>
+            <h3>Your chaos</h3>
+          </article>
+        </div>
+
+        <!-- BIG CARD ABOUT HER -->
+        <div class="card" style="margin-top: 18px;">
+          <div class="chip">
+            <span>💛</span> Why you’re actually special to me
+          </div>
+          <h3>You’re not “too much”. You’re just you. And I love that.</h3>
+          <p>
+            Snehal, yes, I know – sometimes this all feels like “too much”. But you also know how I am,
+            how I give, how I show care. It’s never fake or timepass, it’s just <b>naturally me</b>.
+            And it’s not because “I like you like that” or anything else complicated – I just genuinely
+            don’t want to lose our friendship because of these overthinking-type thoughts.
+          </p>
+          <br />
+          <p>
+            I love the way we are. The way <b>we</b> are. I want that version of us again.
+            I’ve never forced you for anything – not for talking, not for calls, not for extra attention.
+            From your side also, our friendship was always natural and full of effort,
+            and I really want that same thing again… but this time for a long time, for life only, ok? 😌
+          </p>
+          <br />
+          <p>
+            You never judged me. You always supported me. I literally only cry properly in front of you.
+            My taunts, my nakhre, my drama – sab tere aage hi aata hai.
+            There are so many small things you’ve done that made me feel safe with you.
+          </p>
+          <br />
+          <p>
+            Honestly, in office I never expected our friendship to become <b>this</b> good.
+            But it did. And still sometimes I go back in my head to old moments, overthink everything,
+            and then get scared of making the same mistakes again now.
+            I don’t trust people easily in office… except you.
+          </p>
+          <br />
+          <p>
+            Haan, I know I have other friends too – “Shani”, Falguni, others – but tell me,
+            why would I ever give <b>your</b> place to anyone else? I’m not that person.
+            From extrovert I’m becoming a small-circle person now, and in that small circle,
+            <b>you are there</b>. That’s it. Bas. 🥺💛
+          </p>
+          <br />
+          <p>
+            And yes, I know… main chutiya hoon, thoda pagal bhi hoon, but that’s me yaar, Snehallll.
+            Still, I’m your chutiya only – if you let me be. 🙂
+          </p>
+        </div>
+      </section>
+
+      <!-- UPDATED SIMPLE 📸 SECTION -->
+      <section>
+        <h2 class="section-title">
+          <span>📸</span> A few moments I’m grateful for
+        </h2>
+        <p class="section-subtitle">
+          tu aati hi nai mere sath 😭 bohot sare cafe dhund ke rakhe hai chalo ab jate hai 😏
+        </p>
+      </section>
+    </main>
+
+    <!-- INVITE PAGE -->
+    <main id="page-invite" class="page">
+      <div class="back-bar">
+        <button class="btn btn-ghost" onclick="openPage('home')">⬅ Back to main page</button>
+        <p class="back-text">And now… one small plan, if you feel like it. 🌤️</p>
+      </div>
+
+      <section>
+        <h2 class="section-title">
+          <span>🌤️</span> About tomorrow (Sunday)…
+        </h2>
+        <p class="section-subtitle">
+          I don’t just want to say sorry on a website. I want to fix it in real life, with food, laughs and full bakchodi. 😌
+        </p>
+
+        <div class="card">
+          <div class="chip">
+            <span>📅</span> Small plan, big hope
+          </div>
+          <h3>Can we go out tomorrow?</h3>
+          <p>
+            Tomorrow (Sunday)… can we go out somewhere? Just like before – eat something tasty, walk around,
+            laugh, talk about random things, do full bakchodi and forget this fight a little bit?
+          </p>
+          <br />
+          <p>
+            No pressure. I just really miss <b>us</b> – our stupid conversations, your expressions, the way you roast me.
+            I want one chill day with my favourite human again.
+          </p>
+
+          <div class="invite-actions">
+            <button class="btn btn-primary" onclick="answerInvite(true)">
+              Yes, let’s go 😌💛
+            </button>
+            <button class="btn btn-ghost" onclick="answerInvite(false)">
+              No, can’t tomorrow
+            </button>
+          </div>
+
+          <div id="inviteResponse" class="invite-response"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Confetti container -->
+  <div class="confetti" id="confetti"></div>
+
+  <script>
+    function openPage(name) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(p => p.classList.remove('page-active'));
+
+      const pageToShow = document.getElementById('page-' + name);
+      if (pageToShow) {
+        pageToShow.classList.add('page-active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function triggerForgive() {
+      const msg = document.getElementById("forgiveMessage");
+      msg.classList.add("show");
+
+      const confettiContainer = document.getElementById("confetti");
+      confettiContainer.innerHTML = "";
+
+      for (let i = 0; i < 60; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti-piece";
+
+        const colors = ["#ff7aa2", "#ffd166", "#9b5de5", "#00bbf9", "#00f5d4"];
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.animationDelay = Math.random() * 0.4 + "s";
+        piece.style.transform = "translateY(-40px) rotate(" + (Math.random() * 60 - 30) + "deg)";
+
+        confettiContainer.appendChild(piece);
+      }
+
+      setTimeout(() => {
+        confettiContainer.innerHTML = "";
+      }, 2600);
+    }
+
+    function answerInvite(yes) {
+      const box = document.getElementById("inviteResponse");
+      box.classList.remove("happy", "sad", "show");
+
+      if (yes) {
+        box.innerHTML = `
+          🥹💛 <b>Yesss!</b> Thank you.<br />
+          Okay, plan locked for tomorrow – we’ll decide place/time on chat.
+          I’m already smiling like an idiot. Promise I’ll keep it light, fun and drama-free (or at least I’ll try). 😌
+        `;
+        box.classList.add("happy", "show");
+      } else {
+        box.innerHTML = `
+          😔 It’s okay, I get it.<br />
+          I know you have work / assignments / things to do and I truly respect that.
+          I’ll be a little sad, but it’s fine… we’ll go next time when you’re free.
+          I’m not going anywhere, I’ll wait for that day. 💛
+        `;
+        box.classList.add("sad", "show");
+      }
+    }
+  </script>
+</body>
+</html>
